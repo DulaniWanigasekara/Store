@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hype Bay</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen">
+       
+    <nav class="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-tshirt text-2xl"></i>
+                    <h1 class="text-2xl font-bold">Hype bay</h1>
+                </div>
+                <div class="hidden md:flex space-x-4">
+                    <button id="nav-pos" class="nav-btn active px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-cash-register mr-2"></i>POS
+                    </button>
+                    <button id="nav-products" class="nav-btn px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-box mr-2"></i>Products
+                    </button>
+                    <button id="nav-customers" class="nav-btn px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-users mr-2"></i>Customers
+                    </button>
+                    <button id="nav-orders" class="nav-btn px-4 py-2 rounded-lg transition-all">
+                        <i class="fas fa-receipt mr-2"></i>Orders
+                    </button>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+           
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <button class="nav-btn-mobile block w-full text-left py-2" data-section="pos">
+                    <i class="fas fa-cash-register mr-2"></i>POS
+                </button>
+                <button class="nav-btn-mobile block w-full text-left py-2" data-section="products">
+                    <i class="fas fa-box mr-2"></i>Products
+                </button>
+                <button class="nav-btn-mobile block w-full text-left py-2" data-section="customers">
+                    <i class="fas fa-users mr-2"></i>Customers
+                </button>
+                <button class="nav-btn-mobile block w-full text-left py-2" data-section="orders">
+                    <i class="fas fa-receipt mr-2"></i>Orders
+                </button>
+            </div>
+        </div>
+    </nav>
+     <script src="assets/js/app.js"></script>
+</body>
+</html>
