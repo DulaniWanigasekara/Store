@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-100 min-h-screen">
-     <!--Nav bar-->  
+    
     <nav class="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -35,7 +37,7 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
             </div>
-           
+
             <div id="mobile-menu" class="md:hidden hidden pb-4">
                 <button class="nav-btn-mobile block w-full text-left py-2" data-section="pos">
                     <i class="fas fa-cash-register mr-2"></i>POS
@@ -52,63 +54,72 @@
             </div>
         </div>
     </nav>
-     <!--POS Section-->
-     <section id="pos-section" class="section active">
+    
+    <section id="pos-section" class="section active">
         <div class="container mx-auto px-4 py-6">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Product Categories & Items -->
+       
                 <div class="lg:col-span-2">
-                    <!-- Category Tabs -->
+                    
                     <div class="bg-white rounded-lg shadow-md p-4 mb-6">
                         <h2 class="text-xl font-bold mb-4">Product Categories</h2>
                         <div class="flex flex-wrap gap-2">
-                            <button class="category-btn active bg-purple-600 text-white px-4 py-2 rounded-lg transition-all" data-category="all">
+                            <button
+                                class="category-btn active bg-purple-600 text-white px-4 py-2 rounded-lg transition-all"
+                                data-category="all">
                                 All Items
                             </button>
-                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="shirts">
+                            <button
+                                class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300"
+                                data-category="shirts">
                                 <i class="fas fa-tshirt mr-2"></i>Shirts
                             </button>
-                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="pants">
+                            <button
+                                class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300"
+                                data-category="pants">
                                 <i class="fas fa-user-tie mr-2"></i>Pants
                             </button>
-                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="accessories">
+                            <button
+                                class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300"
+                                data-category="accessories">
                                 <i class="fas fa-gem mr-2"></i>Accessories
                             </button>
                         </div>
                     </div>
 
-                    <!-- Product Grid -->
+                
                     <div class="bg-white rounded-lg shadow-md p-4">
                         <div class="flex justify-between items-center mb-4">
                             <h3 class="text-lg font-semibold">Products</h3>
                             <div class="flex items-center space-x-2">
-                                <input type="text" id="product-search" placeholder="Search products..." 
-                                       class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                                <button id="search-btn" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                <input type="text" id="product-search" placeholder="Search products..."
+                                    class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button id="search-btn"
+                                    class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </div>
                         </div>
                         <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                            <!-- Products load here -->
+                          
                         </div>
                     </div>
                 </div>
 
-                <!-- Cart and Checkout -->
+             
                 <div class="lg:col-span-1">
                     <div class="bg-white rounded-lg shadow-md p-4 sticky top-6">
                         <h3 class="text-lg font-semibold mb-4">Shopping Cart</h3>
-                        
-                        <!-- Customer Selection -->
+
+                     
                         <div class="mb-4">
                             <label class="block text-sm font-medium text-gray-700 mb-2">Customer</label>
-                            <select id="customer-select" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <select id="customer-select"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                                 <option value="">Walk-in Customer</option>
                             </select>
                         </div>
 
-                        <!-- Cart Items -->
                         <div id="cart-items" class="space-y-2 mb-4 max-h-64 overflow-y-auto">
                             <div class="text-center text-gray-500 py-8">
                                 <i class="fas fa-shopping-cart text-4xl mb-2"></i>
@@ -116,12 +127,13 @@
                             </div>
                         </div>
 
-                        <!-- Discount Section -->
+                       
                         <div class="border-t pt-4 mb-4">
                             <div class="flex items-center space-x-2 mb-2">
                                 <input type="number" id="discount-input" placeholder="Discount %" min="0" max="100"
-                                       class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
-                                <button id="apply-discount" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                    class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button id="apply-discount"
+                                    class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                     Apply
                                 </button>
                             </div>
@@ -131,7 +143,6 @@
                             </div>
                         </div>
 
-                        <!-- Cart Summary -->
                         <div class="border-t pt-4 space-y-2">
                             <div class="flex justify-between">
                                 <span>Subtotal:</span>
@@ -147,12 +158,13 @@
                             </div>
                         </div>
 
-                        <!-- Checkout Buttons -->
                         <div class="mt-6 space-y-2">
-                            <button id="checkout-btn" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold">
+                            <button id="checkout-btn"
+                                class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold">
                                 <i class="fas fa-credit-card mr-2"></i>Checkout
                             </button>
-                            <button id="clear-cart" class="w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                            <button id="clear-cart"
+                                class="w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors">
                                 <i class="fas fa-trash mr-2"></i>Clear Cart
                             </button>
                         </div>
@@ -162,32 +174,45 @@
         </div>
     </section>
 
-        <!-- Products Management section -->
+  
     <section id="products-section" class="section">
         <div class="container mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold">Product Management</h2>
-                    <button id="add-product-btn" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                    <button id="add-product-btn"
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
                         <i class="fas fa-plus mr-2"></i>Add Product
                     </button>
                 </div>
 
-                <!-- Products Table -->
+              
                 <div class="overflow-x-auto">
                     <table class="w-full table-auto">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Price</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Image</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Name</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Category</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Price</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Stock</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions</th>
                             </tr>
                         </thead>
                         <tbody id="products-table-body" class="bg-white divide-y divide-gray-200">
-                            <!-- Products load here -->
+                           
                         </tbody>
                     </table>
                 </div>
@@ -195,31 +220,42 @@
         </div>
     </section>
 
-     <!-- Customers Management Section -->
+   
     <section id="customers-section" class="section">
         <div class="container mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold">Customer Management</h2>
-                    <button id="add-customer-btn" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                    <button id="add-customer-btn"
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
                         <i class="fas fa-plus mr-2"></i>Add Customer
                     </button>
                 </div>
 
-                <!-- Customers Table -->
+             
                 <div class="overflow-x-auto">
                     <table class="w-full table-auto">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Orders</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Name</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Email</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Phone</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Total Orders</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions</th>
                             </tr>
                         </thead>
                         <tbody id="customers-table-body" class="bg-white divide-y divide-gray-200">
-                            <!-- Customers load here -->
+                    
                         </tbody>
                     </table>
                 </div>
@@ -227,14 +263,14 @@
         </div>
     </section>
 
-    <!-- Orders Management Section -->
     <section id="orders-section" class="section">
         <div class="container mx-auto px-4 py-6">
             <div class="bg-white rounded-lg shadow-md p-6">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold">Order Management</h2>
                     <div class="flex space-x-2">
-                        <select id="order-filter" class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <select id="order-filter"
+                            class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                             <option value="all">All Orders</option>
                             <option value="today">Today</option>
                             <option value="week">This Week</option>
@@ -243,21 +279,33 @@
                     </div>
                 </div>
 
-                <!-- Orders Table -->
+             
                 <div class="overflow-x-auto">
                     <table class="w-full table-auto">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Items</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
-                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Order ID</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Customer</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Date</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Items</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Total</th>
+                                <th
+                                    class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Actions</th>
                             </tr>
                         </thead>
                         <tbody id="orders-table-body" class="bg-white divide-y divide-gray-200">
-                            <!-- Orders load here -->
+                           
                         </tbody>
                     </table>
                 </div>
@@ -265,9 +313,9 @@
         </div>
     </section>
 
-    
-    <!-- Product Modal -->
-    <div id="product-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+
+    <div id="product-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-md w-full p-6">
             <div class="flex justify-between items-center mb-4">
                 <h3 id="product-modal-title" class="text-lg font-semibold">Add Product</h3>
@@ -279,11 +327,13 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Product Name</label>
-                        <input type="text" id="product-name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="text" id="product-name" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                        <select id="product-category" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <select id="product-category" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                             <option value="">Select Category</option>
                             <option value="shirts">Shirts</option>
                             <option value="pants">Pants</option>
@@ -292,27 +342,33 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Price ($)</label>
-                        <input type="number" id="product-price" step="0.01" min="0" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="number" id="product-price" step="0.01" min="0" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Stock Quantity</label>
-                        <input type="number" id="product-stock" min="0" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="number" id="product-stock" min="0" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Image URL</label>
-                        <input type="url" id="product-image" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="url" id="product-image"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                 </div>
                 <div class="flex justify-end space-x-2 mt-6">
-                    <button type="button" class="close-modal px-4 py-2 text-gray-600 hover:text-gray-800">Cancel</button>
-                    <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Save</button>
+                    <button type="button"
+                        class="close-modal px-4 py-2 text-gray-600 hover:text-gray-800">Cancel</button>
+                    <button type="submit"
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Save</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Customer Modal -->
-    <div id="customer-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+  
+    <div id="customer-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-md w-full p-6">
             <div class="flex justify-between items-center mb-4">
                 <h3 id="customer-modal-title" class="text-lg font-semibold">Add Customer</h3>
@@ -324,31 +380,37 @@
                 <div class="space-y-4">
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" id="customer-name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="text" id="customer-name" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                        <input type="email" id="customer-email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="email" id="customer-email" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
-                        <input type="tel" id="customer-phone" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <input type="tel" id="customer-phone" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-gray-700 mb-1">Address</label>
-                        <textarea id="customer-address" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
+                        <textarea id="customer-address" rows="3"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"></textarea>
                     </div>
                 </div>
                 <div class="flex justify-end space-x-2 mt-6">
-                    <button type="button" class="close-modal px-4 py-2 text-gray-600 hover:text-gray-800">Cancel</button>
-                    <button type="submit" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Save</button>
+                    <button type="button"
+                        class="close-modal px-4 py-2 text-gray-600 hover:text-gray-800">Cancel</button>
+                    <button type="submit"
+                        class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">Save</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Receipt Modal -->
-    <div id="receipt-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div id="receipt-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-md w-full p-6">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-semibold">Receipt</h3>
@@ -357,19 +419,21 @@
                 </button>
             </div>
             <div id="receipt-content" class="space-y-4">
-                <!-- Receipt content generate here -->
+           
             </div>
             <div class="flex justify-end space-x-2 mt-6">
-                <button id="print-receipt" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                <button id="print-receipt"
+                    class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
                     <i class="fas fa-print mr-2"></i>Print
                 </button>
-                <button class="close-modal bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">Close</button>
+                <button
+                    class="close-modal bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Order Details Modal -->
-    <div id="order-details-modal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div id="order-details-modal"
+        class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-2xl w-full p-6">
             <div class="flex justify-between items-center mb-4">
                 <h3 class="text-lg font-semibold">Order Details</h3>
@@ -378,20 +442,21 @@
                 </button>
             </div>
             <div id="order-details-content">
-                <!-- Order details load here -->
+               
             </div>
             <div class="flex justify-end mt-6">
-                <button class="close-modal bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">Close</button>
+                <button
+                    class="close-modal bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition-colors">Close</button>
             </div>
         </div>
     </div>
 
-    <!-- Toast Notifications -->
     <div id="toast-container" class="fixed top-4 right-4 z-50 space-y-2">
-        <!-- Toast notifications appear here -->
+ 
     </div>
 
-    
-     <script src="assets/js/app.js"></script>
+
+    <script src="assets/js/work.js"></script>
 </body>
+
 </html>
