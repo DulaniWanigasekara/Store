@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hype Bay</title>
+    <title>Fashion Rack</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="bg-gray-100 min-h-screen">
-       
+     <!--Nav bar-->  
     <nav class="bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
                     <i class="fas fa-tshirt text-2xl"></i>
-                    <h1 class="text-2xl font-bold">Hype bay</h1>
+                    <h1 class="text-2xl font-bold">Fashion Rack</h1>
                 </div>
                 <div class="hidden md:flex space-x-4">
                     <button id="nav-pos" class="nav-btn active px-4 py-2 rounded-lg transition-all">
@@ -52,6 +52,117 @@
             </div>
         </div>
     </nav>
+     <!--POS Section-->
+     <section id="pos-section" class="section active">
+        <div class="container mx-auto px-4 py-6">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Product Categories & Items -->
+                <div class="lg:col-span-2">
+                    <!-- Category Tabs -->
+                    <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+                        <h2 class="text-xl font-bold mb-4">Product Categories</h2>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="category-btn active bg-purple-600 text-white px-4 py-2 rounded-lg transition-all" data-category="all">
+                                All Items
+                            </button>
+                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="shirts">
+                                <i class="fas fa-tshirt mr-2"></i>Shirts
+                            </button>
+                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="pants">
+                                <i class="fas fa-user-tie mr-2"></i>Pants
+                            </button>
+                            <button class="category-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-lg transition-all hover:bg-gray-300" data-category="accessories">
+                                <i class="fas fa-gem mr-2"></i>Accessories
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-lg font-semibold">Products</h3>
+                            <div class="flex items-center space-x-2">
+                                <input type="text" id="product-search" placeholder="Search products..." 
+                                       class="px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button id="search-btn" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <!-- Products load here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart and Checkout -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-lg shadow-md p-4 sticky top-6">
+                        <h3 class="text-lg font-semibold mb-4">Shopping Cart</h3>
+                        
+                        <!-- Customer Selection -->
+                        <div class="mb-4">
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Customer</label>
+                            <select id="customer-select" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="">Walk-in Customer</option>
+                            </select>
+                        </div>
+
+                        <!-- Cart Items -->
+                        <div id="cart-items" class="space-y-2 mb-4 max-h-64 overflow-y-auto">
+                            <div class="text-center text-gray-500 py-8">
+                                <i class="fas fa-shopping-cart text-4xl mb-2"></i>
+                                <p>Cart is empty</p>
+                            </div>
+                        </div>
+
+                        <!-- Discount Section -->
+                        <div class="border-t pt-4 mb-4">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <input type="number" id="discount-input" placeholder="Discount %" min="0" max="100"
+                                       class="flex-1 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <button id="apply-discount" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                                    Apply
+                                </button>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span>Discount:</span>
+                                <span id="discount-amount" class="text-green-600">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Cart Summary -->
+                        <div class="border-t pt-4 space-y-2">
+                            <div class="flex justify-between">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">$0.00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Tax (8%):</span>
+                                <span id="tax-amount">$0.00</span>
+                            </div>
+                            <div class="flex justify-between font-bold text-lg border-t pt-2">
+                                <span>Total:</span>
+                                <span id="total-amount">$0.00</span>
+                            </div>
+                        </div>
+
+                        <!-- Checkout Buttons -->
+                        <div class="mt-6 space-y-2">
+                            <button id="checkout-btn" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold">
+                                <i class="fas fa-credit-card mr-2"></i>Checkout
+                            </button>
+                            <button id="clear-cart" class="w-full bg-gray-500 text-white py-2 rounded-lg hover:bg-gray-600 transition-colors">
+                                <i class="fas fa-trash mr-2"></i>Clear Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
      <script src="assets/js/app.js"></script>
 </body>
 </html>
